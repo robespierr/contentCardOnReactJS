@@ -5,8 +5,11 @@ module.exports = React.createClass({
         var cardsItems = this.props.data.map(function(card) {
             return (
                 <div className="cards-list__item grid__item one-quarter lap--one-half palm--one-whole" key={card.id}>
-                    <Card title={card.title}
-                          description={card.description}>
+                    <Card link={card.link}
+                          icon={card.icon}
+                          title={card.title}
+                          description={card.description}
+                          backgroundImage={card.backgroundImage}>
                     </Card>
                 </div>
             );

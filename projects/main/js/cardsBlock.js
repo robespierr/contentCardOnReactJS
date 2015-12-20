@@ -3,7 +3,7 @@ var CardsList = require('./cardsList');
 
 module.exports = React.createClass({
     loadCardsFromServer: function() {
-        //todo: load data from this.props.url
+        //todo: move request logic to reusable resource
         var self = this;
 
         qwest.get(this.props.url)
@@ -25,12 +25,12 @@ module.exports = React.createClass({
 
     render: function() {
         return (
-            <div className="cards-block">
+            <section className="cards-block">
                 <div className="cards-block__wrap">
                     <h1 className="cards-block__title">Some cards</h1>
                     <CardsList data={this.state.data}></CardsList>
                 </div>
-            </div>
+            </section>
         );
     }
 });

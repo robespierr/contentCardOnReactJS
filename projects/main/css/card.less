@@ -4,7 +4,100 @@
 /* card styles */
 
 .card {
-  border: 1px solid #eee;
+  position: relative;
+  overflow: hidden;
+  height: 16em;
+  border: 1px solid #bfbfbf;
+  border-radius: 2px;
+  .bg-cover;
+  color: #fff;
+  .transition(border-color);
+
+  //&:before {
+  //  content: '';
+  //  display: block;
+  //  padding-top: 90%; //height of card equal 0.9*width of card
+  //}
+
+  &__wrap {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1.2em;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  &__icon {
+    margin-right: 0.2em;
+  }
+
+  &__title {
+    margin-bottom: 0.24em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__content {
+    overflow: hidden;
+    max-height: 10.4em;
+  }
+
+  &__controls {
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+    height: 4em;
+    width: 100%;
+    padding: 0.8em;
+    word-spacing: 1em;
+    background: rgba(0, 0, 0, 0.6);
+    transform: translate3d(0, 100%, 0);
+    .transition(transform);
+
+    &-item {
+      display: inline-block;
+      margin-right: 0.4em;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__button {
+    .button-input;
+    width: 2.4em;
+    height: 2.4em;
+    padding: 0.5em;
+    border-radius: 50%;
+    text-align: center;
+    background: #fff;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1px;
+    .transition(color);
+
+    &:hover {
+      color: #01729a;
+    }
+
+    &:active {
+      margin-top: 1px;
+      margin-bottom: 0;
+      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  &:hover {
+    border-color: #333;
+
+    .card__controls {
+      transform: translate3d(0, 0, 0);
+    }
+  }
 }
 
 /* end card styles */
