@@ -1,4 +1,4 @@
 # contentCardOnReactJS
 Tech assignment and test project on ReactJS
 
-[Build](http://robespierr.github.io/contentCardOnReactJS/projects/build/)
+<a href="http://robespierr.github.io/contentCardOnReactJS/projects/build/" target="_blank">Build</a>
