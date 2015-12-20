@@ -1,0 +1,9 @@
+node_modules
+_
+
+logs
+*.log
+
+.lock-wscript
+/.idea/
+*.editorconfig

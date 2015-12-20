@@ -1,0 +1,49 @@
+@import 'lib/mixins';
+/* base project styles */
+
+//color scheme:
+@baze-font-color: #262626;
+//end color scheme
+
+
+
+//fonts mixins
+.roboto(@font-size: inherit, @line-height: inherit) {
+  font-family: 'Roboto Slab', serif;
+  font-size: @font-size;
+  line-height: @line-height;
+}
+.open-sans(@font-size: inherit, @line-height: inherit) {
+  font-family: 'Open Sans', sans-serif;
+  font-size: @font-size;
+  line-height: @line-height;
+}
+//end fonts
+
+
+
+//common blocks:
+body{
+  width: 100%;
+  height: 100%;
+  .open-sans(14px, 1.2);
+  color: @baze-font-color;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Roboto Slab', serif;
+  font-weight: normal;
+}
+
+a{
+  text-decoration: none;
+  .transition(color);
+}
+
+//end common blocks
+
+
+/* end base project styles */
+
+
+
