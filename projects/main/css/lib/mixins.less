@@ -1,0 +1,148 @@
+/* common mixins */
+//some frequent mixins
+.opacity(@trnsp : 80){
+  filter:~'progid:DXImageTransform.Microsoft.Alpha(opacity='@trnsp ~')';
+  -moz-opacity: @trnsp/100;
+  -khtml-opacity: @trnsp/100;
+  opacity: @trnsp/100;
+}
+
+//Contain floats: h5bp.com/q
+.clearfix{
+  *zoom: 1;
+  &:before, &:after{
+    content: " ";
+    display: table;
+  }
+  &:after{
+    clear: both;
+  }
+}
+
+.box-shadow(@x:0px; @y:1px; @blur:2px; @color:rgba(0,0,0,0.30); @rest...){
+  box-shadow: @arguments;
+  -moz-box-shadow: @arguments;
+  -webkit-box-shadow: @arguments;
+}
+
+.transform(@func:rotate(45deg)){
+  -webkit-transform: @func;
+  -moz-transform:    @func;
+  -ms-transform:     @func;
+  -o-transform:      @func;
+  transform:         @func;
+}
+.transition(@prop:all, @time:0.2s, @time-line-func:ease){
+  -webkit-transition: @arguments;
+  -moz-transition: @arguments;
+  -ms-transition: @arguments;
+  -o-transition: @arguments;
+  transition: @arguments;
+}
+
+.border-box{
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+.animation(@text){
+  -webkit-animation:  @text;
+  -moz-animation:   @text;
+  -o-animation:   @text;
+  -ms-animation:   @text;
+  animation:   @text;
+}
+
+.inline-block{
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  zoom: 1;
+  *display: inline;
+}
+
+.border-radius (@radius: 45px) {
+  border-radius: @radius;
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+}
+.sprite (@x, @y) {
+  background: url('../img/sprite.png') no-repeat -@x -@y;
+}
+
+
+.text-input{
+  border:0;
+  background: none;
+  outline:0;
+  .border-radius(0);
+  .border-box;
+  .inline-block;
+}
+.button-input{
+  &:extend(.text-input);
+}
+
+.placeholder(@color:inherit){
+  &::-webkit-input-placeholder{
+    .text;
+    color:@color;
+  }
+  &::-moz-placeholder{
+    .text;
+    line-height: normal;
+    color:@color;
+  }
+  &:-moz-placeholder{
+    .text;
+    color:@color;
+  }
+  &:-ms-input-placeholder{
+    .text;
+    color:@color;
+  }
+}
+
+.justify(){
+  text-align: justify;
+  >*{
+    .inline-block;
+    text-align: left;
+  }
+  &:after{
+    content: '';
+    .inline-block;
+    vertical-align: top;
+    width: 100%;
+  }
+}
+
+.bg-cover{
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.inline-block-wrap{
+  word-spacing: -0.31em;
+  >*{
+    word-spacing: normal;
+  }
+}
+
+//vertical align middle for content:
+.va-table{
+  height: 100%;
+  width: 100%;
+  display: table;
+  .va-cell{
+    width: 100%;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+/* end common mixins */
